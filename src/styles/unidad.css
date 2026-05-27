@@ -1,0 +1,143 @@
+/* ==========================================
+   ESTILOS COMPARTIDOS PARA LAS UNIDADES
+   ========================================== */
+
+.unidad-container {
+  min-height: 100vh;
+  background-color: var(--bg-principal);
+  color: var(--texto);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* HEADER DE LA UNIDAD */
+.unidad-container header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 60px;
+  background: var(--bg-navbar);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--esmeralda-claro);
+  transition: background 0.3s ease, border-bottom 0.3s ease;
+}
+
+.unidad-container .logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 19px;
+  color: var(--texto);
+}
+
+.unidad-container .logo span {
+  color: var(--esmeralda);
+  font-weight: 600;
+}
+
+/* BOTÓN VOLVER / INICIO */
+.unidad-container nav button {
+  text-decoration: none;
+  color: var(--texto-suave);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 16px;
+  border-radius: 50px;
+  background: transparent;
+  border: 1px solid var(--esmeralda-claro);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.unidad-container nav button:hover {
+  color: var(--texto);
+  background: var(--esmeralda-mint);
+  transform: translateY(-1px);
+}
+
+/* SECCIÓN CONTENEDORA DE TARJETAS */
+.unidad-container .proyectos {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 60px;
+}
+
+.unidad-container .proyectos h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: var(--texto);
+}
+
+/* CUADRÍCULA DE CARTAS (Semanas) */
+.unidad-container .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* TARJETA INDIVIDUAL */
+.unidad-container .card {
+  position: relative;
+  background-color: var(--bg-tarjetas);
+  border: 1px solid var(--esmeralda-claro);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.unidad-container .card:hover {
+  transform: translateY(-4px);
+  border-color: var(--esmeralda-mint);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.unidad-container .card h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: var(--texto);
+}
+
+.unidad-container .card p {
+  margin: 0 0 20px 0;
+  font-size: 14px;
+  color: var(--texto-suave);
+  line-height: 1.5;
+}
+
+/* BOTÓN IR (FLECHA) */
+.unidad-container .go-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--esmeralda-claro);
+  color: var(--texto);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.unidad-container .card:hover .go-btn {
+  background-color: var(--esmeralda-mint);
+  color: var(--texto);
+  transform: translateX(3px);
+}
+
+/* RESPONSIVE PARA DISPOSITIVOS MÓVILES */
+@media (max-width: 768px) {
+  .unidad-container header {
+    padding: 14px 24px;
+  }
+  
+  .unidad-container .proyectos {
+    padding: 30px 24px;
+  }
+  
+  .unidad-container .cards {
+    grid-template-columns: 1fr; /* Una sola columna en celulares */
+  }
+}

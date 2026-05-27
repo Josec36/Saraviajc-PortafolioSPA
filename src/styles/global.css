@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+:root {
+  /* Paleta verde esmeralda pastel + crema */
+  --esmeralda:      #7ec8a4;
+  --esmeralda-suave:#a8d8bc;
+  --esmeralda-claro:#d4f0e3;
+  --esmeralda-mint: #e8f7f0;
+  --crema:          #faf8f3;
+  --crema-oscura:   #f0ece2;
+  --texto:          #2d3a32;
+  --texto-suave:    #6b7c72;
+  --blanco:         #ffffff;
+
+  --radio: 18px;
+  --sombra: 0 8px 30px rgba(126, 200, 164, 0.15);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--crema);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+/* ETIQUETA DE SECCIÓN */
+.section-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--esmeralda);
+  margin-bottom: 12px;
+}
+
+/* SCROLL BAR */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--crema); }
+::-webkit-scrollbar-thumb { background: var(--esmeralda-suave); border-radius: 10px; }
+
+/* ==========================================
+   VARIABLES DE COLOR (MODO CLARO / OSCURO)
+   ========================================== */
+
+/* ☀️ MODO CLARO (Por defecto) */
+:root {
+  --bg-principal: #fbf9f4;       /* Fondo Crema Claro */
+  --bg-tarjetas: #ffffff;        /* Blanco para los contenedores */
+  --texto-principal: #1a2421;    /* Texto casi negro/verde oscuro */
+  --texto-secundario: #50635d;   /* Texto grisáceo sutil */
+  --accent-navbar: #e1ede8;      /* Fondo sutil para el menú claro */
+  
+  /* Esmeralda Pastel para el Switcher u otros detalles */
+  --verde-esmeralda-pastel: #a3d9c9; 
+}
+
+/* 🌙 MODO OSCURO (Se activa automáticamente con esta propiedad) */
+[data-theme="dark"] {
+  --bg-principal: #122324;       /* Tu Verde Petróleo de fondo */
+  --bg-tarjetas: #192e2f;        /* Un verde petróleo ligeramente más claro para contrastar */
+  --texto-principal: #f7fafc;    /* Texto blanco/claro */
+  --texto-secundario: #a0aec0;   /* Texto gris claro */
+  --accent-navbar: #1c3435;      /* Fondo para el menú oscuro */
+}
+
+/* ==========================================
+   APLICACIÓN GLOBAL DEL FONDO Y TEXTO
+   ========================================== */
+body, html {
+  background-color: var(--bg-principal);
+  color: var(--texto-principal);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  font-family: sans-serif; /* Pon la tipografía que uses */
+}
+
+/* 👉 NOTA IMPORTANTE: 
+En tus otros archivos CSS (Hero.css, Proyectos.css, Habilidades.css), 
+si tenías fondos fijos como "background: #122324", cámbialos por:
+background-color: var(--bg-principal);
+
+Y los textos cámbialos por:
+color: var(--texto-principal);
+*/

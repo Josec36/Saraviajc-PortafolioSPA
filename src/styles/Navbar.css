@@ -1,0 +1,114 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 60px;
+  /* Usamos variable de transparencia para el efecto blur según el modo */
+  background: var(--bg-navbar); 
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--esmeralda-claro);
+  transition: background 0.3s ease, border-bottom 0.3s ease;
+}
+
+/* LOGO */
+.logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 19px;
+  color: var(--texto);
+  transition: color 0.3s ease;
+}
+.logo span {
+  color: var(--esmeralda);
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  align-items: center; /* Centra verticalmente los links junto al botón */
+  gap: 8px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--texto-suave);
+  font-size: 14px;
+  font-weight: 400;
+  padding: 6px 14px;
+  border-radius: 50px;
+  transition: all 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: var(--texto);
+  background: var(--esmeralda-mint);
+}
+
+/* ☀️ / 🌙 ESTILOS DEL BOTÓN INTERACTIVO */
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 50px;
+  transition: all 0.25s ease;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--esmeralda-mint);
+  transform: scale(1.05);
+}
+
+/* HAMBURGUESA */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--texto);
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.hamburger:hover {
+  background: var(--esmeralda-mint);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar { padding: 14px 24px; }
+
+  .hamburger { display: block; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    flex-direction: column;
+    background: var(--bg-tarjetas); /* Cambia de color de fondo según el modo */
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    border: 1px solid var(--esmeralda-claro);
+    min-width: 180px;
+    gap: 12px;
+  }
+
+  .nav-links.active { display: flex; }
+  
+  /* Pequeño ajuste para que el botón ocupe todo el ancho en mobile */
+  .theme-toggle-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 4px;
+  }
+}
