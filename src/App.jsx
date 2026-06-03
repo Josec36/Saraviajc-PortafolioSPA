@@ -11,16 +11,12 @@ import Unidad3 from './components/Unidad3'
 
 function App() {
   const [vistaActual, setVistaActual] = useState('inicio')
-  
-  // Estado para el modo oscuro o claro (inicia en oscuro por defecto como te gusta)
   const [tema, setTema] = useState('dark')
 
-  // Efecto para inyectar el atributo data-theme en el HTML cada vez que cambie el tema
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', tema)
   }, [tema])
 
-  // Función para alternar entre claro y oscuro
   const toggleTema = () => {
     setTema((prevTema) => (prevTema === 'dark' ? 'light' : 'dark'))
   }
@@ -28,7 +24,6 @@ function App() {
   if (vistaActual === 'inicio') {
     return (
       <>
-        {/* Le pasamos el tema actual y la función para cambiarlo al Navbar */}
         <Navbar tema={tema} toggleTema={toggleTema} />
         <main>
           <Hero />
